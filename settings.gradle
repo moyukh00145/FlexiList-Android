@@ -1,0 +1,3 @@
+include ':Flexilist'
+include ':app'
+rootProject.name = "Flexi_list"
