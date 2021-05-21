@@ -23,7 +23,7 @@ public class FlexiList  {
         this.layout=rowlayout;
     }
 
-    private void getReadyAdapter(){
+    public void getReadyAdapter(){
 
         FlexilistAdapter adapter=new FlexilistAdapter(context,data,layout);
         viewContainer.setAdapter(adapter);
