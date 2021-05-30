@@ -162,9 +162,9 @@ public class FlexiList{
         adapter2.setLongClickListener(onlongclicked,adapter);
     }
 
-    public void getSwipeAction(int SwipeType){
-        this.onSwipeAction= (com.androidhelper.flexilist.onSwipeAction) context;
-        ItemTouchHelper.SimpleCallback callback=new ItemTouchHelper.SimpleCallback(0,SwipeType) {
+    public void getSwipeAction(int SwipeType) {
+        this.onSwipeAction = (com.androidhelper.flexilist.onSwipeAction) context;
+        ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, SwipeType) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                 return false;
@@ -172,18 +172,15 @@ public class FlexiList{
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                Toast.makeText(context,data1.get(viewHolder.getAbsoluteAdapterPosition()).toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, data1.get(viewHolder.getAbsoluteAdapterPosition()).toString(), Toast.LENGTH_SHORT).show();
 
-                onSwipeAction.onSwiped(viewHolder.getAbsoluteAdapterPosition(),adapter);
+                onSwipeAction.onSwiped(viewHolder.getAbsoluteAdapterPosition(), adapter);
 
 
             }
         };
 
-        ItemTouchHelper helper=new ItemTouchHelper(callback);
+        ItemTouchHelper helper = new ItemTouchHelper(callback);
         helper.attachToRecyclerView(recyclerView);
-
-
     }
-
 }
