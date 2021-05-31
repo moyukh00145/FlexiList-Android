@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:text="My name"
+                android:text="@string/my_name"
                 android:textColor="@android:color/black"
                 android:textSize="24dp" />
 
