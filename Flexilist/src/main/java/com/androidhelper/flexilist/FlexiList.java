@@ -45,7 +45,7 @@ public class FlexiList{
         check=true;
     }
 
-    public void addData_to_TEO_TEXT_VIEW(@NonNull ArrayList<Object> data1,@NonNull ArrayList<Object> data2){
+    public void addData_to_TWO_TEXT_VIEW(@NonNull ArrayList<Object> data1,@NonNull ArrayList<Object> data2){
         this.data1=data1;
         this.data2=data2;
         check=true;
@@ -181,7 +181,7 @@ public class FlexiList{
         helper.attachToRecyclerView(recyclerView);
     }
 
-    public void setFlexListClicked(){
+    public void setFlexiListClicked(){
         this.onFlexlistClicked= (com.androidhelper.flexilist.onFlexlistClicked) context;
         adapter3=new FlexilistAdapter(context);
         adapter3.setOnFlexlistClicked(onFlexlistClicked);

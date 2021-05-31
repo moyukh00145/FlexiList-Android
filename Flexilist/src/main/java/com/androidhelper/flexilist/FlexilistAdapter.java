@@ -31,10 +31,7 @@ public class FlexilistAdapter extends RecyclerView.Adapter<com.androidhelper.fle
    private int uniqueId;
     static onLongClicked onlongclicked;
     static onFlexlistClicked onFlexlistClicked;
-
     static FlexilistAdapter adapter_new;
-
-
 
 
     public FlexilistAdapter(@NonNull Context context) {
