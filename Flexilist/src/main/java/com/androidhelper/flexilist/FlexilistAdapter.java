@@ -29,8 +29,8 @@ public class FlexilistAdapter extends RecyclerView.Adapter<com.androidhelper.fle
    private ArrayList<Object>imgurl;
    private int layout;
    private int uniqueId;
-    onConnectedWithFlexiList onConnectedWithFlexiList;
     static onLongClicked onlongclicked;
+    static onFlexlistClicked onFlexlistClicked;
 
     static FlexilistAdapter adapter_new;
 
@@ -43,42 +43,38 @@ public class FlexilistAdapter extends RecyclerView.Adapter<com.androidhelper.fle
     }
 
 
-    public FlexilistAdapter(@NonNull Context context,int uniqueId ,int layout_type, @NonNull ArrayList<Object>TextView1Data,onConnectedWithFlexiList onConnectedWithFlexiList) {
+    public FlexilistAdapter(@NonNull Context context,int uniqueId ,int layout_type, @NonNull ArrayList<Object>TextView1Data) {
         this.context=context;
         this.data1=TextView1Data;
         this.layout=layout_type;
         this.uniqueId=uniqueId;
-        this.onConnectedWithFlexiList=onConnectedWithFlexiList;
 
     }
 
-    public FlexilistAdapter(@NonNull Context context,int uniqueId, int layout_type, @NonNull ArrayList<Object>TextView1Data, @NonNull ArrayList<Object>TextView2Data,onConnectedWithFlexiList onConnectedWithFlexiList) {
+    public FlexilistAdapter(@NonNull Context context,int uniqueId, int layout_type, @NonNull ArrayList<Object>TextView1Data, @NonNull ArrayList<Object>TextView2Data) {
         this.context=context;
         this.data1=TextView1Data;
         this.data2=TextView2Data;
         this.layout=layout_type;
         this.uniqueId=uniqueId;
-        this.onConnectedWithFlexiList=onConnectedWithFlexiList;
     }
 
-    public FlexilistAdapter(@NonNull Context context,int uniqueId, int layout_type,@NonNull ArrayList<Object>TextView1Data, @NonNull ArrayList<Object>imageUrl, boolean imageContains,onConnectedWithFlexiList onConnectedWithFlexiList) {
+    public FlexilistAdapter(@NonNull Context context,int uniqueId, int layout_type,@NonNull ArrayList<Object>TextView1Data, @NonNull ArrayList<Object>imageUrl, boolean imageContains) {
         this.context=context;
         this.data1=TextView1Data;
         this.imgurl=imageUrl;
         this.layout=layout_type;
         this.uniqueId=uniqueId;
-        this.onConnectedWithFlexiList=onConnectedWithFlexiList;
 
     }
 
-    public FlexilistAdapter(@NonNull Context context,int uniqueId, int layout_type, @NonNull ArrayList<Object>TextView1Data, @NonNull ArrayList<Object>TextView2Data, @NonNull ArrayList<Object>imageUrl,onConnectedWithFlexiList onConnectedWithFlexiList) {
+    public FlexilistAdapter(@NonNull Context context,int uniqueId, int layout_type, @NonNull ArrayList<Object>TextView1Data, @NonNull ArrayList<Object>TextView2Data, @NonNull ArrayList<Object>imageUrl) {
         this.context=context;
         this.data1=TextView1Data;
         this.data2=TextView2Data;
         this.imgurl=imageUrl;
         this.layout=layout_type;
         this.uniqueId=uniqueId;
-        this.onConnectedWithFlexiList=onConnectedWithFlexiList;
     }
 
 
@@ -189,7 +185,12 @@ public class FlexilistAdapter extends RecyclerView.Adapter<com.androidhelper.fle
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onConnectedWithFlexiList.onListItemClicked(getAbsoluteAdapterPosition());
+                    if (onFlexlistClicked==null){
+                        Log.w("Next check","null-0");
+                    }
+                    else{
+                        onFlexlistClicked.onListItemClicked(getAbsoluteAdapterPosition());
+                    }
                 }
             });
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -211,6 +212,10 @@ public class FlexilistAdapter extends RecyclerView.Adapter<com.androidhelper.fle
     public void setLongClickListener(onLongClicked onlongclicked,FlexilistAdapter adapter){
         this.onlongclicked=onlongclicked;
         this.adapter_new=adapter;
+    }
+
+    public void setOnFlexlistClicked(onFlexlistClicked onFlexlistClicked){
+        this.onFlexlistClicked=onFlexlistClicked;
     }
 
 

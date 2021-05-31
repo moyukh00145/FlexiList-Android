@@ -27,19 +27,16 @@ public class FlexiList{
     private ArrayList<Object> data2;
     private ArrayList<Object> imageUrl;
     boolean check=false;
-    private FlexilistAdapter adapter,adapter2;
+    private FlexilistAdapter adapter,adapter2,adapter3;
     private RecyclerView recyclerView;
-    onConnectedWithFlexiList onConnectedWithFlexiList;
+    onFlexlistClicked onFlexlistClicked;
     onSwipeAction onSwipeAction;
-
     onLongClicked onlongclicked;
+
     public FlexiList(@NonNull Context context,int layout_type,@NonNull RecyclerView recyclerView){
         this.lay_type=layout_type;
         this.context=context;
         this.recyclerView=recyclerView;
-        this.onConnectedWithFlexiList= (com.androidhelper.flexilist.onConnectedWithFlexiList) context;
-
-
 
     }
 
@@ -74,7 +71,7 @@ public class FlexiList{
                 case ONE_TEXT_VIEW:{
                     if (data1!=null){
                         if (!data1.isEmpty()){
-                            adapter=new FlexilistAdapter(context,lay_type,R.layout.onetextview,data1,onConnectedWithFlexiList);
+                            adapter=new FlexilistAdapter(context,lay_type,R.layout.onetextview,data1);
                             setAdapterToRecycleView();
                         }
                         else{
@@ -89,7 +86,7 @@ public class FlexiList{
                 case TWO_TEXT_VIEW:{
                     if (data1!=null&&data2!=null){
                         if (!data1.isEmpty()&&!data2.isEmpty()){
-                            adapter=new FlexilistAdapter(context,lay_type,R.layout.two_textview,data1,data2,onConnectedWithFlexiList);
+                            adapter=new FlexilistAdapter(context,lay_type,R.layout.two_textview,data1,data2);
                             setAdapterToRecycleView();
                         }
                         else{
@@ -104,7 +101,7 @@ public class FlexiList{
                 case ONE_TEXT_VIEW_ONE_IMAGE:{
                     if (data1!=null&&imageUrl!=null){
                         if (!data1.isEmpty()&&!imageUrl.isEmpty()){
-                            adapter=new FlexilistAdapter(context,lay_type,R.layout.onetextview_oneimageview,data1,imageUrl,true,onConnectedWithFlexiList);
+                            adapter=new FlexilistAdapter(context,lay_type,R.layout.onetextview_oneimageview,data1,imageUrl,true);
                             setAdapterToRecycleView();
                         }
                         else{
@@ -119,7 +116,7 @@ public class FlexiList{
                 case TWO_TEXT_VIEW_ONE_IMAGE:{
                     if (data1!=null&&data2!=null&&imageUrl!=null){
                         if (!data1.isEmpty()&&!data2.isEmpty()&&!imageUrl.isEmpty()){
-                            adapter=new FlexilistAdapter(context,lay_type,R.layout.twotextview_oneimageview,data1,data2,imageUrl,onConnectedWithFlexiList);
+                            adapter=new FlexilistAdapter(context,lay_type,R.layout.twotextview_oneimageview,data1,data2,imageUrl);
                             setAdapterToRecycleView();
                         }
                         else{
@@ -182,5 +179,12 @@ public class FlexiList{
 
         ItemTouchHelper helper = new ItemTouchHelper(callback);
         helper.attachToRecyclerView(recyclerView);
+    }
+
+    public void setFlexListClicked(){
+        this.onFlexlistClicked= (com.androidhelper.flexilist.onFlexlistClicked) context;
+        adapter3=new FlexilistAdapter(context);
+        adapter3.setOnFlexlistClicked(onFlexlistClicked);
+
     }
 }
