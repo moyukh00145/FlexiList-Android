@@ -42,7 +42,7 @@ allprojects {
 - Add it in your app level build.gradle at the dependencies :
 ```
 dependencies {
-	        implementation 'com.github.moyukh00145:FlexiList-Android:2.1.1'
+	        implementation 'com.github.moyukh00145:FlexiList-Android:2.1.2'
 	}
 ```
 Or Maven:
@@ -57,7 +57,7 @@ Or Maven:
 <dependency>
 	    <groupId>com.github.moyukh00145</groupId>
 	    <artifactId>FlexiList-Android</artifactId>
-	    <version>2.1.1</version>
+	    <version>2.1.2</version>
 </dependency>
 ```
 ## How do I use FlexiList?
