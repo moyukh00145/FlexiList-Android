@@ -8,7 +8,7 @@ FlexiList is a Simple and Handy tool to create and work with Recycler View or Li
 ## Contents
 
 1. [Description](#description)
-1. [Benifit](#How-flexilist-can-help?)
+1. [Benifit](#How-flexilist-can-help)
 1. [Getting started](#getting-started-with-flexilist)
 1. [Built with](#built-with)
 1. [Authors](#authors)
@@ -33,17 +33,18 @@ or use Gradle:
 - Add it in your project level build.gradle at the end of repositories:
 ```
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 - Add it in your app level build.gradle at the dependencies :
 ```
 dependencies {
-	        implementation 'com.github.moyukh00145:FlexiList-Android:2.1.2'
-	}
+    
+	 implementation 'com.github.moyukh00145:FlexiList-Android:2.1.2'
+}
 ```
 Or Maven:
 ```
