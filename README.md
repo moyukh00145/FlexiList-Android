@@ -1,6 +1,6 @@
 # FlexiList
 
-[![Contributors](https://img.shields.io/github/contributors/moyukh00145/FlexiList-Android)](https://github.com/moyukh00145/FlexiList-Android/graphs/contributors) [![GitHub forks](https://img.shields.io/github/forks/moyukh00145/FlexiList-Android)](https://github.com/moyukh00145/FlexiList-Android/network) [![GitHub issues](https://img.shields.io/github/issues/moyukh00145/FlexiList-Android)](https://github.com/moyukh00145/FlexiList-Android/issues)
+[![Contributors](https://img.shields.io/github/contributors/moyukh00145/FlexiList-Android)](https://github.com/moyukh00145/FlexiList-Android/graphs/contributors) [![GitHub stars](https://img.shields.io/github/stars/moyukh00145/FlexiList-Android)](https://github.com/moyukh00145/FlexiList-Android/stargazers) [![GitHub forks](https://img.shields.io/github/forks/moyukh00145/FlexiList-Android)](https://github.com/moyukh00145/FlexiList-Android/network) [![GitHub issues](https://img.shields.io/github/issues/moyukh00145/FlexiList-Android)](https://github.com/moyukh00145/FlexiList-Android/issues)
 [![Dependency](https://img.shields.io/badge/Dependency-updated-brightgreen)](#download) [![GitHub license](https://img.shields.io/github/license/moyukh00145/FlexiList-Android)](https://github.com/moyukh00145/FlexiList-Android/blob/master/LICENSE)
 
 FlexiList is a Simple and Handy tool to create and work with Recycler View or List View. Now create your own recycler view without handeling too much code
